@@ -23,6 +23,14 @@ export class AppComponent {
         alert('hoge');
     }
 
+    /**
+     * 変更イベント
+     * @param value
+     */
+    change(value: string): void {
+        console.log(`change - ${value}`);
+    }
+
 // #endregion
 
 }

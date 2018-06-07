@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 
 import { MatTabsModule } from '@angular/material/tabs';
 
+import { CustomEventDirective } from './common/directives';
 import { AppComponent } from './app.component';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        CustomEventDirective
     ],
     imports: [
         BrowserModule,
