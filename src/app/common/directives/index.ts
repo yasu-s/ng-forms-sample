@@ -1,2 +1,2 @@
 /* tslint:disable */
-export { CustomEventDirective } from './custom-event.directive';
+export * from './custom-event.directive';
