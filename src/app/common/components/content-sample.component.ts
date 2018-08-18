@@ -1,19 +1,15 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
+import { ControlValueAccessor } from '@angular/forms';
 
 @Component({
-    selector: 'custom-emitter-component',
+    selector: 'content-sample-component',
     template: `
-        <ul>
-            <li *ngFor="let num of list"
-                (click)="onClick(num)" [style.background-color]="num === value ? 'yellow' : 'white'">
-                {{ num }}
-            </li>
-        </ul>
+        <ng-content></ng-content>
     `,
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None
 })
-export class CustomEmitterComponent {
+export class ContentSampleComponent {
 
 // #region fields
 

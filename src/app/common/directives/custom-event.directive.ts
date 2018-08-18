@@ -3,8 +3,8 @@ import {
     OnInit, OnDestroy
 } from '@angular/core';
 
-import { fromEvent, Subscription } from 'rxjs';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { fromEvent } from 'rxjs';
+import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
 /**
  * カスタムイベントディレクティブ
@@ -16,15 +16,15 @@ export class CustomEventDirective implements OnInit, OnDestroy {
 
 // #region fields
 
-    /** KeyUp Subscription */
-    subscription: Subscription;
-
     /** debounceTime */
     debounceTime = 300;
 
     /** KeyUp拡張 */
     @Output('keyupEx')
     keyupEx = new EventEmitter<string>();
+
+    /** DestoryEmitter */
+    private readonly onDestroy$ = new EventEmitter();
 
 // #endregion
 
@@ -42,8 +42,9 @@ export class CustomEventDirective implements OnInit, OnDestroy {
     ngOnInit(): void {
         console.log('CustomEventDirective - ngOnInit');
 
-        this.subscription = fromEvent<KeyboardEvent>(this.el.nativeElement, 'keyup')
+        fromEvent<KeyboardEvent>(this.el.nativeElement, 'keyup')
             .pipe(
+                takeUntil(this.onDestroy$),
                 debounceTime(this.debounceTime),
                 distinctUntilChanged()
             ).subscribe(event => {
@@ -56,10 +57,7 @@ export class CustomEventDirective implements OnInit, OnDestroy {
      */
     ngOnDestroy(): void {
         console.log('CustomEventDirective - ngOnDestroy');
-
-        if (this.subscription) {
-            this.subscription.unsubscribe();
-        }
+        this.onDestroy$.emit();
     }
 
 // #endregion
