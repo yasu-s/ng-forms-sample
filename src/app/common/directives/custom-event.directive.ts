@@ -17,7 +17,7 @@ export class CustomEventDirective implements OnInit, OnDestroy {
 // #region fields
 
     /** debounceTime */
-    debounceTime = 300;
+    debounceTime = 150;
 
     /** KeyUp拡張 */
     @Output('keyupEx')

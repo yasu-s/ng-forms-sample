@@ -1,7 +1,6 @@
 import { Component, ViewChild, DebugElement } from '@angular/core';
 import { By } from "@angular/platform-browser";
 import { TestBed, async, ComponentFixture, fakeAsync, tick } from '@angular/core/testing';
-import { fromEvent } from 'rxjs';
 
 import { CustomEventDirective } from './custom-event.directive';
 
