@@ -1,10 +1,10 @@
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
-
 import { MatTabsModule } from '@angular/material/tabs';
 
-import { CustomEmitterComponent } from './common/components';
+import { CustomEmitterComponent, CustomComponent } from './common/components';
 import { CustomEventDirective } from './common/directives';
 import { AppComponent } from './app.component';
 
@@ -13,8 +13,10 @@ import { AppComponent } from './app.component';
         AppComponent,
         CustomEventDirective,
         CustomEmitterComponent,
+        CustomComponent,
     ],
     imports: [
+        FormsModule,
         BrowserModule,
         BrowserAnimationsModule,
         MatTabsModule

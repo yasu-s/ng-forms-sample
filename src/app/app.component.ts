@@ -12,6 +12,9 @@ export class AppComponent {
     /** タイトル */
     title = 'app';
 
+    /**  */
+    num = 2;
+
 // #endregion
 
 // #region methods
