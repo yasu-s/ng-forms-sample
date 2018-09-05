@@ -35,7 +35,7 @@ describe('AppComponent', () => {
         fixture.detectChanges();
         inputEl.nativeElement.value = 'hoge';
 
-        // execrise
+        // exercise
         inputEl.nativeElement.dispatchEvent( new KeyboardEvent('keyup'));
         tick(100);
 
