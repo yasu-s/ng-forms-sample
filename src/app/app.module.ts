@@ -5,13 +5,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
 
 import { CustomEmitterComponent, CustomComponent } from './common/components';
-import { CustomEventDirective } from './common/directives';
+import { CustomEventDirective, CustomNumberDirective } from './common/directives';
 import { AppComponent } from './app.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         CustomEventDirective,
+        CustomNumberDirective,
         CustomEmitterComponent,
         CustomComponent,
     ],
