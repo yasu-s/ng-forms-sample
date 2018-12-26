@@ -37,8 +37,8 @@ export class AppComponent {
         console.log(`change - ${value}`);
     }
 
-    setMemo(): void {
-        this.memo = 'aaa';
+    setMemo(memo: string): void {
+        this.memo = memo;
     }
 
 // #endregion
