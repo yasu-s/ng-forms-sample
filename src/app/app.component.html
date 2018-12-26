@@ -27,4 +27,38 @@
             CustomComponent.value:{{ num }}
         </div>
     </mat-tab>
+    <mat-tab label="Tab 5">
+        <div>
+            <form #form="ngForm">
+                <input type="text" name="memo" required [(ngModel)]="memo">
+                <ul>
+                    <li *ngIf="form.valid">form.valid</li>
+                    <li *ngIf="form.invalid">form.invalid</li>
+                    <li *ngIf="form.touched">form.touched</li>
+                    <li *ngIf="form.untouched">form.untouched</li>
+                    <li *ngIf="form.pristine">form.pristine</li>
+                    <li *ngIf="form.dirty">form.dirty</li>
+                </ul>
+            </form>
+        </div>
+        <div>
+            <button (click)="setMemo()">set</button>
+        </div>
+    </mat-tab>
+    <mat-tab label="FormPanel">
+        <div>
+            changeDetection: ChangeDetectionStrategy.Default
+        </div>
+        <div>
+            <custom-form-panel [(memo)]="memo"></custom-form-panel>
+        </div>
+    </mat-tab>
+    <mat-tab label="FormPanel2">
+        <div>
+            changeDetection: ChangeDetectionStrategy.OnPush
+        </div>
+        <div>
+            <custom-form-panel2 [(memo)]="memo"></custom-form-panel2>
+        </div>
+    </mat-tab>
 </mat-tab-group>

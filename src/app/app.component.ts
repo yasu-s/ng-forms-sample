@@ -15,6 +15,9 @@ export class AppComponent {
     /**  */
     num = 2;
 
+    /** */
+    memo = '';
+
 // #endregion
 
 // #region methods
@@ -32,6 +35,10 @@ export class AppComponent {
      */
     change(value: string): void {
         console.log(`change - ${value}`);
+    }
+
+    setMemo(): void {
+        this.memo = 'aaa';
     }
 
 // #endregion

@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
 
-import { CustomEmitterComponent, CustomComponent } from './common/components';
+import { CustomEmitterComponent, CustomComponent, FormPanelComponent, FormPanel2Component } from './common/components';
 import { CustomEventDirective, CustomNumberDirective } from './common/directives';
 import { AppComponent } from './app.component';
 
@@ -15,6 +15,8 @@ import { AppComponent } from './app.component';
         CustomNumberDirective,
         CustomEmitterComponent,
         CustomComponent,
+        FormPanelComponent,
+        FormPanel2Component,
     ],
     imports: [
         FormsModule,
