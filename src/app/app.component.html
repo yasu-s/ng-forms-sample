@@ -30,7 +30,7 @@
     <mat-tab label="Tab 5">
         <div>
             <form #form="ngForm">
-                <input type="text" name="memo" required [(ngModel)]="memo">
+                <input type="text" name="memo" required [(ngModel)]="memo" #memoTxt="ngModel">
                 <ul>
                     <li *ngIf="form.valid">form.valid</li>
                     <li *ngIf="form.invalid">form.invalid</li>
@@ -38,6 +38,8 @@
                     <li *ngIf="form.untouched">form.untouched</li>
                     <li *ngIf="form.pristine">form.pristine</li>
                     <li *ngIf="form.dirty">form.dirty</li>
+                    <li>memoTxt.touchedOrDirty {{ memoTxt.touchedOrDirty() ? 'true' : 'false' }}</li>
+                    <li>memoTxt.invalidAndEdited {{ memoTxt.invalidAndEdited() ? 'true' : 'false' }}</li>
                 </ul>
             </form>
         </div>

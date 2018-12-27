@@ -7,6 +7,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { CustomEmitterComponent, CustomComponent, FormPanelComponent, FormPanel2Component } from './common/components';
 import { CustomEventDirective, CustomNumberDirective } from './common/directives';
 import { AppComponent } from './app.component';
+import './common/ext';
 
 @NgModule({
     declarations: [
