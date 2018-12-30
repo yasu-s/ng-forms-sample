@@ -64,4 +64,20 @@
             <custom-form-panel2 [(memo)]="memo"></custom-form-panel2>
         </div>
     </mat-tab>
+    <mat-tab label="ngIf">
+        <div>
+            <input type="text" name="memo" required [(ngModel)]="memo" #txtMemo1="ngModel">
+            <div *ngIf="txtMemo1.hasError('required')">
+                必須入力です
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="hidden">
+        <div>
+            <input type="text" name="memo" required [(ngModel)]="memo" #txtMemo2="ngModel">
+            <div [hidden]="!txtMemo1.hasError('required')">
+                必須入力です
+            </div>
+        </div>
+    </mat-tab>
 </mat-tab-group>
