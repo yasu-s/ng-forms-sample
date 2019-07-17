@@ -2,7 +2,7 @@ export {};
 
 import { NgModel } from '@angular/forms';
 
-declare module '@angular/forms/src/directives/ng_model' {
+declare module '@angular/forms' {
 
     interface NgModel {
         /**
