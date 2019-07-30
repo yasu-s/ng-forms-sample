@@ -53,10 +53,10 @@ describe('AppComponent', () => {
 })
 class TestComponent {
 
-    @ViewChild(CustomEventDirective)
+    @ViewChild(CustomEventDirective, { static: true })
     customEvent: CustomEventDirective;
 
-    text: string = '';
+    text = '';
 
     change(value: string): void {
         this.text = value;
