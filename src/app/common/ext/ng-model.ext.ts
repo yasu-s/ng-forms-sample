@@ -1,10 +1,10 @@
 export {};
 
-import { NgModel } from '@angular/forms';
+import { NgControl  } from '@angular/forms';
 
 declare module '@angular/forms' {
 
-    interface NgModel {
+    interface NgControl  {
         /**
          * NgModel.touched or dirty
          * @returns touched or dirty
@@ -19,12 +19,12 @@ declare module '@angular/forms' {
     }
 }
 
-NgModel.prototype.touchedOrDirty = function() {
-    const control = this as NgModel;
+NgControl .prototype.touchedOrDirty = function() {
+    const control = this as NgControl ;
     return control.touched || control.dirty;
 };
 
-NgModel.prototype.invalidAndEdited = function() {
-    const control = this as NgModel;
+NgControl .prototype.invalidAndEdited = function() {
+    const control = this as NgControl ;
     return (control.touched || control.dirty) && control.invalid;
 };
